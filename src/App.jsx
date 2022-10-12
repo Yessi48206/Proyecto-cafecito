@@ -4,6 +4,7 @@ import Administrador from '../src/componente/views/Administrador.jsx'
 import Error404 from '../src/componente/views/Error404.jsx';
 import Menu from '../src/componente/views/common/Menu';
 import Footer  from '../src/componente/views/common/Footer.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     //administrar la rutas
