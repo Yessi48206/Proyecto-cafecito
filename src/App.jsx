@@ -5,6 +5,10 @@ import Error404 from '../src/componente/views/Error404.jsx';
 import Menu from '../src/componente/views/common/Menu';
 import Footer  from '../src/componente/views/common/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DetalleProducto from './componente/views/producto/DetalleProducto.jsx';
+import CrearProducto from './componente/views/producto/CrearProducto.jsx';
+import EditarProducto from './componente/views/producto/EditarProducto.jsx';
+import './app.css';
 function App() {
   return (
     //administrar la rutas
@@ -16,6 +20,9 @@ function App() {
       <Route exact path='/' element={<Inicio></Inicio>}></Route>
       <Route exact path='/administrar' element={<Administrador></Administrador>}> </Route>
       <Route path='*' element={ <Error404></Error404>}></Route>
+      <Route exact path='/administrar/detalle' element={<DetalleProducto></DetalleProducto>}></Route>
+      <Route exact path='/administrar/crear' element={<CrearProducto></CrearProducto>}></Route>
+      <Route exact path='/administrar/editar/:id' element={<EditarProducto></EditarProducto>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
