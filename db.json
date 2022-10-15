@@ -3,21 +3,21 @@
         {
             "nombreProducto":"cafe",
             "precio":300,
-            "categoria":"bebida caliente",
+            "categoria":"Bebida caliente",
             "imagen":"https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id":1
         },
         {
             "nombreProducto":"brawnie",
             "precio":350,
-            "categoria":"dulce",
+            "categoria":"Dulce",
             "imagen":"https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id":1
         },
         {
             "nombreProducto":"te",
             "precio":320,
-            "categoria":"bebida caliente",
+            "categoria":"Bebida caliente",
             "imagen":"https://images.pexels.com/photos/12898335/pexels-photo-12898335.jpeg?auto=compress&cs=tinysrgb&w=600",
             "id":1
         }
