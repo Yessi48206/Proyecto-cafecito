@@ -47,29 +47,9 @@ const CrearCuenta = () => {
                     {errors.nombreYapellido?.message}
                 </Form.Text>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formEdad">
-                <Form.Label>Edad</Form.Label>
-                <Form.Control 
-                type="number"
-                placeholder="Ej: 20"
-                {...register("edad",{
-                    required:"La edad es un dato obligatorio",
-                    min:{
-                        value:15,
-                        message:"la menos es edad es 15",
-                    },
-                    max:{
-                        value:100,
-                        message:"la mayor edad es 100"
-                    }
-                })}
-                />
-                 <Form.Text className="text-danger">
-                    {errors.edad?.message}
-                </Form.Text>
-                </Form.Group>
+                
                 <Form.Group className="mb-3" controlId="formNombreApellido">
-                <Form.Label>Edad</Form.Label>
+                <Form.Label>sexo</Form.Label>
                 <Form.Select aria-label="Default select example"
                 {...register('sexo',{
                 required:'Debe seleccionar una categoria'
@@ -102,6 +82,43 @@ const CrearCuenta = () => {
                  <Form.Text className="text-danger">
                     {errors.Fecha?.message}
                 </Form.Text>
+                <Form.Group className="mb-3  mt-2">
+            <Form.Label>Ingrese su correo</Form.Label>
+            <Form.Control 
+            type="email"
+            placeholder="Ej: xxxxxx@xxxx.xxx"
+            {...register("correo",{
+                required:"Debe ingresar un correo",
+                pattern:{
+                    value:/\S+@\S+\.\S+/,
+                    message: "debe ingresar un correo valido",
+                }
+            })}
+            
+            />
+             <Form.Text className="text-danger">
+                   {errors.correo?.message}
+                </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control
+            type="password"
+            {...register("contraseña",{
+                required:"debe ingresar una contraseña",
+                pattern:{
+                    value:/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+                    message:"La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                }
+            })
+            }
+            />
+        <Form.Text className="text-danger">
+                    {errors.contraseña?.message}
+                </Form.Text>
+            
+        </Form.Group>
+
                 </Form.Group>
                 <Button variant="success" type="submit" className="my-4 pe-3">Registar</Button>
             </Form>

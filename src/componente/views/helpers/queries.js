@@ -18,3 +18,23 @@ try {
     return false;
 }
 }
+export const crearProductoAPI= async(producto)=>{
+    //peticion post para crear producto
+try {
+    
+    const respuesta= await fetch(URL,{
+        //aqui va un objeto
+        method:"POST",
+        headers:{
+            //objeto en formato json
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(producto) 
+    });
+    
+    return respuesta;
+} catch (error) {
+    console.log(error);
+    return false;
+}
+}

@@ -12,7 +12,7 @@ const Administrador = () => {
             setProducto(respuesta);
 
         })
-    })
+    },[])
     return (
         
         <Container className="mainSection">

@@ -15,7 +15,6 @@ const ItemProducto = ({producto}) => {
             <td className='text-center'>
                 <Link className='btn btn-outline-warning me-2'  to='/administrar/editar'>
                     <i className='bi bi-arrow-clockwise text-warning'></i>
-
                 </Link>
                 <Button variant='outline-danger'>
                     <i className='bi bi-x-lg text-dark'></i>

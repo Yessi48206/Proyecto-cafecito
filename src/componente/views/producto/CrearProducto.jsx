@@ -1,14 +1,41 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-
+import { crearProductoAPI } from "../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const CrearProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
+  //inicializar
+  const navegacion= useNavigate();
+
   const onSubmit = (data) => {
     console.log(data);
+    //enviar a la peticion appi
+
+    crearProductoAPI( data).then((respuesta) => {
+        if (respuesta.status === 201) {
+          Swal.fire(
+            "Producto creado",
+            "El producto fue creado correctamente cargado",
+            "success"
+          );
+          //aqui quiero resetear los value del formulario
+            reset();
+            //aqui rediccionamos al ususario 
+            navegacion('/administrar');
+        } else {
+          Swal.fire(
+            "Ocurrio un error",
+            "Intente esta operacion en unos minitos",
+            "error"
+          );
+        }
+      })
   };
   return (
     <Container className="mainSection">
@@ -79,10 +106,11 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCategoria">
-          <Form.Select aria-label="Default select example"
-          {...register('categoria',{
-            required:'Debe seleccionar una categoria'
-          })}
+          <Form.Select
+            aria-label="Default select example"
+            {...register("categoria", {
+              required: "Debe seleccionar una categoria",
+            })}
           >
             <option value="">Seleccione una opcion ..</option>
             <option value="Dulce">Dulce</option>
