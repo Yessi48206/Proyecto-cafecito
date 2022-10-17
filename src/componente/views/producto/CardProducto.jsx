@@ -1,6 +1,6 @@
-import {Col, Cart, Button, Card} from 'react-bootstrap';
+import {Col, Button, Card} from 'react-bootstrap';
 
-const CardProducto = () => {
+export const CardProducto = () => {
     return (
         <>
         <Col className='my-3'>

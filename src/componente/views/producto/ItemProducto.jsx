@@ -13,7 +13,7 @@ const ItemProducto = ({producto}) => {
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td className='text-center'>
-                <Link className='btn btn-outline-warning me-2'  to='/administar/editar/:id'>
+                <Link className='btn btn-outline-warning me-2'  to='/administrar/editar'>
                     <i className='bi bi-arrow-clockwise text-warning'></i>
 
                 </Link>

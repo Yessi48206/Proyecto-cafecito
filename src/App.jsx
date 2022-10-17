@@ -9,6 +9,8 @@ import DetalleProducto from './componente/views/producto/DetalleProducto.jsx';
 import CrearProducto from './componente/views/producto/CrearProducto.jsx';
 import EditarProducto from './componente/views/producto/EditarProducto.jsx';
 import './app.css';
+import CrearCuenta from './componente/views/CrearCuenta.jsx';
+import IniciarSesion from './componente/views/IniciarSesion.jsx';
 function App() {
   return (
     //administrar la rutas
@@ -22,7 +24,9 @@ function App() {
       <Route path='*' element={ <Error404></Error404>}></Route>
       <Route exact path='/administrar/detalle' element={<DetalleProducto></DetalleProducto>}></Route>
       <Route exact path='/administrar/crear' element={<CrearProducto></CrearProducto>}></Route>
-      <Route exact path='/administrar/editar/:id' element={<EditarProducto></EditarProducto>}></Route>
+      <Route exact path='/administrar/editar' element={<EditarProducto></EditarProducto>}></Route>
+      <Route exact path='/IniciarSesion' element={<IniciarSesion></IniciarSesion>} ></Route>
+      <Route exact path='/crearCuenta' element={<CrearCuenta></CrearCuenta>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

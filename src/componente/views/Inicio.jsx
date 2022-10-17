@@ -1,11 +1,16 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+
 
 const Inicio = () => {
     return (
-        <div>
-            <h1 className='text-center my-5'>Bienvenidos</h1>
+        <Container className='mainSection'>
+
+            <h1 className='text-center my-2 display-3'>Bienvenidos</h1>
             <hr/>
-        </div>
+           
+        </Container>
+        
     );
 };
 
