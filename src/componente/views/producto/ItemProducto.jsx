@@ -1,7 +1,30 @@
-import React from 'react';
+
 import { Button } from 'react-bootstrap';
-import {Link} from  'react-router-dom'
-const ItemProducto = ({producto}) => {
+import {Link} from  'react-router-dom';
+import { borrarProductoAPI, consultarAPI } from '../helpers/queries';
+import Swal from "sweetalert2";
+
+const ItemProducto = ({producto,setProducto}) => {
+
+    const borrarProducto = ()=>{
+    //Tarea agregar con SWAL UNA VENTANA QUE PREGUNTE AL USUARIO SI DESEA 
+    //ELIMINAR EL PRODUCTO
+    borrarProductoAPI(producto.id).then((respuesta)=>{
+            if(respuesta.status === 200){
+                Swal.fire('Producto eliminado','El producto fue correctamente eliminado','success');
+                consultarAPI().then((respuesta)=>{
+                    //actualizo el state de producto de administrador con los datos que hay en la api
+                    setProducto(respuesta);
+
+                })
+            }else{
+                Swal.fire(
+                    'Ocurrio un error',
+                    'Intente esta operacion en unos minitos',
+                    'error');
+            }
+        })
+    }
     return (
         <>
      
@@ -13,10 +36,10 @@ const ItemProducto = ({producto}) => {
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td className='text-center'>
-                <Link className='btn btn-outline-warning me-2'  to='/administrar/editar'>
+                <Link className='btn btn-outline-warning me-2'  to={`/administrar/editar/${producto.id} `}>
                     <i className='bi bi-arrow-clockwise text-warning'></i>
                 </Link>
-                <Button variant='outline-danger'>
+                <Button variant='outline-danger' onClick={borrarProducto}>
                     <i className='bi bi-x-lg text-dark'></i>
                 </Button>
             </td>

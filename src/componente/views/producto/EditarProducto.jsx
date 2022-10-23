@@ -1,14 +1,35 @@
+import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import {obtenerUnProductoAPI} from "../helpers/queries.js"
 const EditarProducto = () => {
+
+  const {id}= useParams();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm();
+
   const onSubmit = (data) => {
     console.log(data);
+    //pedir a la api actualizar el producto con los datos peticion put
   };
+
+useEffect(()=>{
+  obtenerUnProductoAPI(id).then((respuesta)=>{
+    if(respuesta.status === 200){
+      console.log(respuesta);
+      setValue('nombreProducto',respuesta.dato.nombreProducto);
+      setValue('precio',respuesta.dato.precio);
+      setValue('imagen',respuesta.dato.imagen);
+      setValue('categoria',respuesta.dato.categoria);
+
+    }
+  })
+},[])
   return (
     <div>
       <section className="container my-3">
@@ -45,7 +66,7 @@ const EditarProducto = () => {
               type="number"
               required
               placeholder="Ej: $250"
-              {...register("Precio", {
+              {...register("precio", {
                 required: "El precio es un dato obligatorio",
                 min: {
                   value: 100,

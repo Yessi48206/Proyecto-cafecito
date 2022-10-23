@@ -38,3 +38,50 @@ try {
     return false;
 }
 }
+
+export const borrarProductoAPI= async(id)=>{
+    
+    //peticion post para crear producto
+try {
+    
+    const respuesta= await fetch(URL+'/'+ id , {
+        //aqui va un objeto
+        method:"DELETE"  
+    });
+    
+    return respuesta;
+} catch (error) {
+    console.log(error);
+    return false;
+}
+}
+export const obtenerProductoAPI= async(id)=>{
+    //peticion get para obtener todos los productos
+try {
+    //console.log(URL);
+    const respuesta= await fetch(URL+'/'+id);
+    const producto={
+        dato:await respuestas.json(),
+        status: respuesta.status
+    }
+    return producto;
+} catch (error) {
+    console.log(error);
+    return false;
+}
+}
+export const obtenerUnProductoAPI= async(id)=>{
+    
+try {
+    //console.log(URL);
+    const respuesta= await fetch(URL+'/'+ id);
+    const producto = {
+        dato: await respuesta.json(),
+        status: respuesta.status
+    }
+    return producto;
+} catch (error) {
+    console.log(error);
+    return false;
+}
+}
