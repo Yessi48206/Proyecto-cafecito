@@ -41,7 +41,7 @@ try {
 
 export const borrarProductoAPI= async(id)=>{
     
-    //peticion post para crear producto
+    //peticion delete para crear producto
 try {
     
     const respuesta= await fetch(URL+'/'+ id , {
@@ -61,7 +61,7 @@ try {
     //console.log(URL);
     const respuesta= await fetch(URL+'/'+id);
     const producto={
-        dato:await respuestas.json(),
+        dato:await respuesta.json(),
         status: respuesta.status
     }
     return producto;

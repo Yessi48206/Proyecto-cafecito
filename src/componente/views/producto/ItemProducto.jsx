@@ -36,11 +36,11 @@ const ItemProducto = ({producto,setProducto}) => {
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td className='text-center'>
-                <Link className='btn btn-outline-warning me-2'  to={`/administrar/editar/${producto.id} `}>
-                    <i className='bi bi-arrow-clockwise text-warning'></i>
+                <Link className='btn btn-outline-warning me-1'  to={`/administrar/editar/${producto.id} `}>
+                   Editar
                 </Link>
-                <Button variant='outline-danger' onClick={borrarProducto}>
-                    <i className='bi bi-x-lg text-dark'></i>
+                <Button variant='outline-danger me-1 mt-1' onClick={borrarProducto}>
+                    Borrar
                 </Button>
             </td>
         </tr>

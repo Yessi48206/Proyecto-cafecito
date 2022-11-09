@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import {obtenerUnProductoAPI} from "../helpers/queries.js"
 const EditarProducto = () => {
 
+  //aqui traemo el parametro de ruta
   const {id}= useParams();
   const {
     register,
@@ -22,6 +23,7 @@ useEffect(()=>{
   obtenerUnProductoAPI(id).then((respuesta)=>{
     if(respuesta.status === 200){
       console.log(respuesta);
+      //cargar los datos al formulario
       setValue('nombreProducto',respuesta.dato.nombreProducto);
       setValue('precio',respuesta.dato.precio);
       setValue('imagen',respuesta.dato.imagen);
