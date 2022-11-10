@@ -1,10 +1,10 @@
 {
   "productos": [
     {
-      "nombreProducto": "cafe",
-      "precio": 300,
-      "categoria": "Bebida caliente",
+      "nombreProducto": "cafe de prueba",
+      "precio": "200",
       "imagen": "https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida caliente",
       "id": 1
     },
     {
@@ -15,10 +15,10 @@
       "id": 4
     },
     {
-      "nombreProducto": "cafe con leche|",
-      "precio": "450",
+      "nombreProducto": "cafe con leche",
+      "precio": "350",
       "imagen": "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg",
-      "categoria": "Bebida fria",
+      "categoria": "Bebida caliente",
       "id": 7
     }
   ],

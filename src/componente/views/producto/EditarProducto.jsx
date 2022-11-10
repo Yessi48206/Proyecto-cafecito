@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {obtenerUnProductoAPI} from "../helpers/queries.js"
+import {editarProductoAPI, } from "../helpers/queries" 
+import Swal from "sweetalert2";
 const EditarProducto = () => {
 
   //aqui traemo el parametro de ruta
@@ -13,11 +15,21 @@ const EditarProducto = () => {
     formState: { errors },
     setValue
   } = useForm();
+  const navegacion= useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
     //pedir a la api actualizar el producto con los datos peticion put
-  };
+    editarProductoAPI(id, data).then((respuesta)=>{
+      if(respuesta.status === 200){
+        Swal.fire('Producto modificado','El producto fue modificado correcto','success')
+      navegacion('/administrar');
+      }else{
+        Swal.fire('Ocurrio un error', 'El producto no fue modificado','error')
+      }
+    })
+
+    }
 
 useEffect(()=>{
   obtenerUnProductoAPI(id).then((respuesta)=>{
@@ -32,6 +44,7 @@ useEffect(()=>{
     }
   })
 },[])
+
   return (
     <div>
       <section className="container my-3">
