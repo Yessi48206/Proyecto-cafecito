@@ -1,25 +1,32 @@
 {
   "productos": [
     {
-      "nombreProducto": "cafe de prueba",
-      "precio": "200",
-      "imagen": "https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombreProducto": "cafe negro",
+      "precio": "302",
+      "imagen": "https://www.webconsultas.com/sites/default/files/styles/wch_image_schema/public/temas/cafe.jpg",
       "categoria": "Bebida caliente",
       "id": 1
     },
     {
-      "nombreProducto": "brawnie",
-      "precio": 320,
+      "nombreProducto": "cafe con leche",
+      "precio": "300",
+      "imagen": "https://cursosbaristacafe.com.mx/wp-content/uploads/2020/01/latte-coffee-cup-scaled-1200x900-cropped.jpg",
       "categoria": "Bebida caliente",
-      "imagen": "https://images.pexels.com/photos/12898335/pexels-photo-12898335.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "id": 4
+      "id": 2
     },
     {
-      "nombreProducto": "cafe con leche",
-      "precio": "350",
-      "imagen": "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg",
-      "categoria": "Bebida caliente",
-      "id": 7
+      "nombreProducto": "Brownie de chocolate",
+      "precio": "100",
+      "imagen": "https://i0.wp.com/commememucho.com/wp-content/uploads/2020/03/Brownie-imagen-cercana.jpg",
+      "categoria": "Dulce",
+      "id": 3
+    },
+    {
+      "nombreProducto": "Factura",
+      "precio": "222",
+      "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/203/846/products/facturas-tante-sara1-eefbcfc3a3b9faecb015918386815254-1024-1024.jpg",
+      "categoria": "Dulce",
+      "id": 4
     }
   ],
   "usuario": []

@@ -1,17 +1,32 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from "react-bootstrap";
+import CardProducto from "./producto/CardProducto";
+import { consultarAPI } from "../views/helpers/queries";
+import { useState, useEffect} from "react";
 
 
 const Inicio = () => {
-    return (
-        <Container className='mainSection'>
+    const [productos, setProductos] = useState([]);
 
-            <h1 className='text-center my-2 display-3'>Bienvenidos</h1>
-            <hr/>
-           
-        </Container>
-        
-    );
+    useEffect(()=>{
+       consultarAPI().then((respuesta)=>{
+        // console.log(respuesta)
+        setProductos(respuesta);
+       })
+       
+    },[])
+
+  return (
+    <Container className="mainSection">
+      <h1 className="display-3 text-center "> <spam> Bienvenidos</spam></h1>
+      <hr />
+      <Row xs={1} md={4}>
+        {/* aqui van las columnas */}
+        {
+            productos.map((producto)=> <CardProducto key={producto._id} producto={producto} setProductos={setProductos}></CardProducto>)            
+        }
+      </Row>
+    </Container>
+  );
 };
 
 export default Inicio;

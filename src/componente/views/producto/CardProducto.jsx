@@ -1,19 +1,26 @@
-import {Col, Button, Card} from 'react-bootstrap';
-
-export const CardProducto = () => {
+import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+const CardProducto = ({producto}) => {
+   const {id,nombreProducto, precio, imagen} = {...producto}
+   console.log(producto);
     return (
         <>
-        <Col className='my-3'>
-            <Card className='anchoCardProducto'>
-            <Card.Img variant="top" src="imagen"/>
-            <Card.Body>
-                <Card.Title>Brawnie</Card.Title>
-                <Card.text>Precio: $400</Card.text>
-                <hr/>
-                <Button variant="danger">Ver mas</Button>
-            </Card.Body>
-            </Card>
-        </Col>
+            <Col className="my-3">
+                <Card className="anchoCardProducto">
+                    <Card.Img
+                        className="card"
+                        variant="top"
+                        src={imagen}
+                    />
+                    <Card.Body>
+                        <Card.Title>{nombreProducto}</Card.Title>
+                        <Card.Text>Precio: ${precio}</Card.Text>
+                        <hr />
+                        <Link className="btn btn-danger" to={`/administrar/detalle/${id}`}>Ver mas</Link>
+                        
+                    </Card.Body>
+                </Card>
+            </Col>
         </>
     );
 };
