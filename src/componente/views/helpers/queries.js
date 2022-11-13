@@ -70,11 +70,11 @@ try {
     return false;
 }
 }
-export const obtenerUnProductoAPI= async(id)=>{
+export const obtenerUnProductoAPI= async(_id)=>{
     
 try {
     //console.log(URL);
-    const respuesta= await fetch(URL+'/'+ id);
+    const respuesta= await fetch(URL+'/'+ _id);
     const producto = {
         dato: await respuesta.json(),
         status: respuesta.status

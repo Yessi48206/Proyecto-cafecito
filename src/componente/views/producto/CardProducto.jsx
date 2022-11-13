@@ -1,8 +1,8 @@
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const CardProducto = ({producto}) => {
-   const {id,nombreProducto, precio, imagen} = {...producto}
-   console.log(producto);
+   const {_id,nombreProducto, precio, imagen} = {...producto}
+   console.log(_id);
     return (
         <>
             <Col className="my-3">
@@ -16,7 +16,7 @@ const CardProducto = ({producto}) => {
                         <Card.Title>{nombreProducto}</Card.Title>
                         <Card.Text>Precio: ${precio}</Card.Text>
                         <hr />
-                        <Link className="btn btn-danger" to={`/administrar/detalle/${id}`}>Ver mas</Link>
+                        <Link className="btn btn-danger" to={`/administrar/detalle/${_id}`}>Ver mas</Link>
                         
                     </Card.Body>
                 </Card>

@@ -9,7 +9,7 @@ const ItemProducto = ({producto,setProducto}) => {
     const borrarProducto = ()=>{
     //Tarea agregar con SWAL UNA VENTANA QUE PREGUNTE AL USUARIO SI DESEA 
     //ELIMINAR EL PRODUCTO
-    borrarProductoAPI(producto.id).then((respuesta)=>{
+    borrarProductoAPI(producto._id).then((respuesta)=>{
             if(respuesta.status === 200){
                 Swal.fire('Producto eliminado','El producto fue correctamente eliminado','success');
                 consultarAPI().then((respuesta)=>{
@@ -30,13 +30,13 @@ const ItemProducto = ({producto,setProducto}) => {
      
         
         <tr>
-            <td>{producto.id}</td>
+            <td>{producto._id}</td>
             <td>{producto.nombreProducto}</td>
             <td>{producto.precio}</td>
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td className='text-center'>
-                <Link className='btn btn-outline-warning me-1'  to={`/administrar/editar/${producto.id} `}>
+                <Link className='btn btn-outline-warning me-1'  to={`/administrar/editar/${producto._id} `}>
                    Editar
                 </Link>
                 <Button variant='outline-danger me-1 mt-1' onClick={borrarProducto}>

@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "nombreProducto": "cafe con leche",
-      "precio": "300",
-      "imagen": "https://cursosbaristacafe.com.mx/wp-content/uploads/2020/01/latte-coffee-cup-scaled-1200x900-cropped.jpg",
-      "categoria": "Bebida caliente",
-      "id": 2
-    },
-    {
       "nombreProducto": "Brownie de chocolate",
       "precio": "100",
       "imagen": "https://i0.wp.com/commememucho.com/wp-content/uploads/2020/03/Brownie-imagen-cercana.jpg",
